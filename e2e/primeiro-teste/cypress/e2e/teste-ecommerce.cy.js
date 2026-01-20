@@ -83,5 +83,11 @@ describe('tela de login', () => {                                 // decribe -> 
         // validar
         cy.get('.login-form > form > p').should('have.text', "Your email or password is incorrect!")
     })
+
+    it('login com email válido', () => {
+        cy.fixture('usuario').then((usuario) => {  
+            cy.realizarlogin(usuario)
+        })
+    })
 })
 
