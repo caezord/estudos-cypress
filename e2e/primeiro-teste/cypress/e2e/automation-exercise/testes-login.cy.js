@@ -29,7 +29,6 @@ describe('tela de login', () => {                                 // decribe -> 
             num: faker.phone.number()
 
           }
-
         
         cy.visit('https://www.automationexercise.com/login')
         cy.get('[data-qa="signup-name"]').type(user_testing.user)
