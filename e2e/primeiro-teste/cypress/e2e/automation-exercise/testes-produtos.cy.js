@@ -1,5 +1,3 @@
-import { faker } from '@faker-js/faker'
-
 describe('tela de produtos', () => {
     beforeEach(() => {
         cy.fixture('usuario').then((usuario) => {
@@ -7,6 +5,9 @@ describe('tela de produtos', () => {
         })
     })
     it('incluir produtos no carrinho', () =>{
+        cy.fixture('usuario').then((usuario) => {
+            cy.realizarlogin(usuario)
+    
             // abrir a tela de produtos
             cy.get('.shop-menu > .nav > :nth-child(2) > a').click()
             cy.get('.title').should('have.text', 'All Products')
@@ -20,10 +21,10 @@ describe('tela de produtos', () => {
             // validar inclusão do produto
             cy.get('.modal-body > :nth-child(1)').should('have.text', 'Your product has been added to cart.')
             cy.get('.modal-footer > .btn').click()
+        })
+
 
     })
 
-    it('finalizar a venda', () => {
-        cy.get('.shop-menu > .nav > :nth-child(3) > a').click()
-    })
+    
 })
