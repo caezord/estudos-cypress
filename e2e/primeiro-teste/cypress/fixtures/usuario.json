@@ -1,4 +1,7 @@
 {
     "name": "user_teste_final_boss",
-    "email": "user666@email.com"
+    "email": "user666@email.com",
+    "password": "123456",
+    "first_name": "Freeman",
+    "last_name": "Kris"
 }

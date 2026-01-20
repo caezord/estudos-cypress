@@ -64,7 +64,7 @@ describe('tela de login', () => {                                 // decribe -> 
         cy.get('[data-qa="create-account"]').click()
 
         // verificar se foi criado corretamente
-        cy.get('[data-qa="create-account"]').should('have.text', 'Account Created!')
+        cy.get('.col-sm-9 > :nth-child(2)').should('have.text', 'Congratulations! Your new account has been successfully created!')
         cy.get('[data-qa="continue-button"]').click()
         
     })
