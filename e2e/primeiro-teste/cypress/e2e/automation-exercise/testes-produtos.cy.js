@@ -35,5 +35,17 @@ describe('tela de produtos', () => {
         cy.get('.text-center > b').should('have.text', 'Cart is empty!')
     })
 
+    it('trocar de categoria e selecionar produtos', () => {
+        cy.get('.shop-menu > .nav > :nth-child(2) > a').click()
+        cy.scrollTo(0, 500)
+
+        //selecionar categoria
+        cy.get('.brands-name > .nav > :nth-child(1) > a').click()
+        cy.scrollTo(0, 500)
+
+        cy.get(':nth-child(6) > .product-image-wrapper > .choose > .nav > li > a').click()
+
+
+    })
     
 })
