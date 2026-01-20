@@ -4,10 +4,10 @@ import { faker } from '@faker-js/faker'
 describe('tela de login', () => {                                 // decribe -> "tela sendo testada"
 
     it('criar conta com email já cadastrado', () => {            // it -> caso de teste
-        cy.fixture('example').then((example) => {
+        cy.fixture('usuario').then((usuario) => {
             cy.visit('https://www.automationexercise.com/login')
-            cy.get('[data-qa="signup-name"]').type(example.name)
-            cy.get('[data-qa="signup-email"]').type(example.email)
+            cy.get('[data-qa="signup-name"]').type(usuario.name)
+            cy.get('[data-qa="signup-email"]').type(usuario.email)
             cy.get('[data-qa="signup-button"]').click()
             cy.get('.signup-form > form > p').should('have.text', 'Email Address already exist!')
 
@@ -67,6 +67,21 @@ describe('tela de login', () => {                                 // decribe -> 
         cy.get('.col-sm-9 > :nth-child(2)').should('have.text', 'Congratulations! Your new account has been successfully created!')
         cy.get('[data-qa="continue-button"]').click()
         
+    })
+
+
+    it('login com email inválido', () => {
+        const invalid_user = { 
+            email: faker.internet.email(),
+            password: "sexoNoVidigal"
+        }
+        cy.visit('https://www.automationexercise.com/login')
+        cy.get('[data-qa="login-email"]').type(invalid_user.email)
+        cy.get('[data-qa="login-password"]').type(invalid_user.password)
+        cy.get('[data-qa="login-button"]').click()
+
+        // validar
+        cy.get('.login-form > form > p').should('have.text', "Your email or password is incorrect!")
     })
 })
 
