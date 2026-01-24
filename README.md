@@ -1,3 +1,5 @@
+
+
 # Cypress Study Project
 
 Este repositório tem como objetivo centralizar estudos práticos sobre **testes automatizados end-to-end (E2E)** utilizando **Cypress**.
@@ -21,6 +23,17 @@ O foco é aprendizado progressivo, boas práticas e experimentação de recursos
 * JavaScript
 * Node.js
 * Faker (@faker-js/faker)
+
+---
+
+## Sites Utilizados para Estudo
+
+Os testes automatizados deste projeto são desenvolvidos utilizando aplicações públicas voltadas para prática de automação:
+
+* [https://www.saucedemo.com/](https://www.saucedemo.com/)
+* [https://automationexercise.com/](https://automationexercise.com/)
+
+> Novos sites poderão ser adicionados a esta lista conforme a evolução dos estudos.
 
 ---
 
